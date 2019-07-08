@@ -33,6 +33,8 @@ function capitalize(string) {
 
 
 function decideWinningItem(firstItem, secondItem) {
+    // Decides on the winner item according to their priority.
+
     if (firstItem === "Rock") {
         if (secondItem === "Scissors") return firstItem;
         else return secondItem;
@@ -59,5 +61,10 @@ function playRockPaperScissors(computerSelection, playerSelection) {
     playerSelection = capitalize(playerSelection.toLowerCase()); 
     computerSelection = capitalize(computerSelection.toLowerCase()); 
 
+    let roundWinner = decideWinningItem(computerSelection, playerSelection);
 
+    // Determines the winner
+    if (roundWinner === computerSelection) return "You lose";
+    else if (roundWinner === playerSelection) return "Computer wins";
+    else console.error("'RoundWinnder' is problematic"); // If the winner can't be determined.
 }
