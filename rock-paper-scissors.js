@@ -11,7 +11,7 @@ function computerPlay() {
         return "Scissors";
     }
     else {
-        console.warn("Houston, we have a problem with randomNum");
+        console.warn(`Function 'computerPlay' got randomNum=${randomNum}`);
     }
 }
 
@@ -50,11 +50,18 @@ function decideWinningItem(firstItem, secondItem) {
         else return secondItem;
     }
 
-    else console.error("Function 'decideWinningItem' got an illegal 'firstItem'")
+    else console.error(`Function 'decideWinningItem' got firstItem=${firstItem}`)
+}
+
+function decideWinner(returnVal) {
+    if (returnVal === -1) return "draw";
+    else if (returnVal === 0) return "computer";
+    else if (returnVal === 1) return "you";
+    else console.error(`Function 'decideWinner' got returnVal=${returnVal}`);
 }
 
 
-function playRockPaperScissors(computerSelection, playerSelection) {
+function playRound(computerSelection, playerSelection) {
     // Plays one round of the game
 
     // Case insensitivity
@@ -67,8 +74,27 @@ function playRockPaperScissors(computerSelection, playerSelection) {
     let roundWinner = decideWinningItem(computerSelection, playerSelection);
 
     // Determines the winner
-    if (playerSelection === computerSelection) return "It's a draw";
-    else if (roundWinner === computerSelection) return `You lose, ${computerSelection} beats ${playerSelection}`;
-    else if (roundWinner === playerSelection) return `You win, ${playerSelection} beats ${computerSelection}`;
+    if (playerSelection === computerSelection) return -1;
+    else if (roundWinner === computerSelection) return 0;
+    else if (roundWinner === playerSelection) return 1;
     else console.error("'RoundWinner' is problematic"); // If the winner can't be determined.
+}
+
+function game() {
+    // Plays 5 rounds of the game
+
+    // Declaring variables
+    let playerSelection;
+    let computerSelection;
+    let playerScore;
+    let ComputerScore;
+
+    // Player-computer decides on their weapons for round 1
+    playerSelection = prompt("Choose one: Rock, Paper or Scissors", "");
+    computerSelection = computerPlay();
+
+    // Round 1
+    result = playRound(computerSelection, playerSelection);
+    
+
 }
