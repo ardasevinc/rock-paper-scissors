@@ -75,9 +75,8 @@ function decideWinner(computerSelection, playerSelection) {
 
 
 function whoWon(result, scoreTable) {
-    if (result.includes("You win!")) scoreTable[1]++;
-    else if (result.includes("Computer wins!")) scoreTable[0]++;
-    else console.error("String inclusion error");
+    if (result.includes("You win!")) scoreTable[1] += 1;
+    else if (result.includes("Computer wins!")) scoreTable[0] += 1;
 
     return scoreTable;
 }
@@ -106,7 +105,7 @@ function game() {
     // Declaring variables
     let playerSelection;
     let computerSelection;
-    let scoreTable = [];
+    let scoreTable = [0, 0];
     let result;
 
     // Selection for round 1
@@ -118,11 +117,10 @@ function game() {
 
     // Begin round 1
     result = playRound(computerSelection, playerSelection);
-    
+    console.log(result);
+
     // Update the scores
     scoreTable = whoWon(result, scoreTable);
-
-    console.log(result);
     
     // Selection for round 2
     console.info("Round 2!");
@@ -133,6 +131,7 @@ function game() {
 
     // Begin round 2
     result = playRound(computerSelection, playerSelection);
+    console.log(result);
 
     // Update the scores
     scoreTable = whoWon(result, scoreTable);
@@ -146,6 +145,7 @@ function game() {
 
     // Begin round 3
     result = playRound(computerSelection, playerSelection);
+    console.log(result);
 
     // Update the scores
     scoreTable = whoWon(result, scoreTable);
@@ -159,6 +159,7 @@ function game() {
 
     // Begin round 4
     result = playRound(computerSelection, playerSelection);
+    console.log(result);
 
     // Update the scores
     scoreTable = whoWon(result, scoreTable);
@@ -172,6 +173,7 @@ function game() {
 
     // Begin the last round
     result = playRound(computerSelection, playerSelection);
+    console.log(result);
 
     // Update the scores
     scoreTable = whoWon(result, scoreTable);
