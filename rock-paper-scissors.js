@@ -74,6 +74,13 @@ function decideWinner(computerSelection, playerSelection) {
 }
 
 
+function whoWon(result) {
+    if (result.includes("You win!")) return "you";
+    else if (result.includes("Computer wins!")) return "computer";
+    else console.error("String inclusion error");
+}
+
+
 function playRound(computerSelection, playerSelection) {
     // Plays one round of the game
 
@@ -102,16 +109,30 @@ function game() {
     let result;
 
     // Selection for round 1
+    console.info("Round 1!");
+    console.info(`Scores: You->${playerScore}, Computer->${ComputerScore}`);
+    
     playerSelection = prompt("Choose one: Rock, Paper or Scissors", "");
     computerSelection = computerPlay();
 
     // Begin round 1
     result = playRound(computerSelection, playerSelection);
+    
+    // Update the scores
+    
+
     console.log(result);
     
     // Selection for round 2
+    console.info("Round 2!");
+    console.info(`Scores: You->${playerScore}, Computer->${ComputerScore}`);
+
     playerSelection = prompt("Choose one: Rock, Paper or Scissors", "");
     computerSelection = computerPlay();
 
     // Begin round 2
+    result = playRound(computerSelection, playerSelection);
+
+    // Update the scores
+
 }
