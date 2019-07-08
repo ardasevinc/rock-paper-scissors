@@ -74,10 +74,12 @@ function decideWinner(computerSelection, playerSelection) {
 }
 
 
-function whoWon(result) {
-    if (result.includes("You win!")) return "you";
-    else if (result.includes("Computer wins!")) return "computer";
+function whoWon(result, computerScore, playerScore) {
+    if (result.includes("You win!")) playerScore++;
+    else if (result.includes("Computer wins!")) computerScore++;
     else console.error("String inclusion error");
+
+    return [computerScore, playerScore];
 }
 
 
