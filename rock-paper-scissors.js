@@ -32,6 +32,26 @@ function capitalize(string) {
 }
 
 
+function decideWinningItem(firstItem, secondItem) {
+    if (firstItem === "Rock") {
+        if (secondItem === "Scissors") return firstItem;
+        else return secondItem;
+    }
+
+    else if (firstItem === "Paper") {
+        if (secondItem === "Rock") return firstItem;
+        else return secondItem;
+    }
+
+    else if (firstItem === "Scissors") {
+        if (secondItem === "Paper") return firstItem;
+        else return secondItem;
+    }
+
+    else console.error("Function 'decideWinningItem' got an illegal 'firstItem'")
+}
+
+
 function playRockPaperScissors(computerSelection, playerSelection) {
     // Plays one round of the game
 
@@ -39,5 +59,5 @@ function playRockPaperScissors(computerSelection, playerSelection) {
     playerSelection = capitalize(playerSelection.toLowerCase()); 
     computerSelection = capitalize(computerSelection.toLowerCase()); 
 
-    
+
 }
