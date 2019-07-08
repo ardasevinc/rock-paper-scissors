@@ -74,12 +74,12 @@ function decideWinner(computerSelection, playerSelection) {
 }
 
 
-function whoWon(result, computerScore, playerScore) {
-    if (result.includes("You win!")) playerScore++;
-    else if (result.includes("Computer wins!")) computerScore++;
+function whoWon(result, scoreTable) {
+    if (result.includes("You win!")) scoreTable[1]++;
+    else if (result.includes("Computer wins!")) scoreTable[0]++;
     else console.error("String inclusion error");
 
-    return [computerScore, playerScore];
+    return scoreTable;
 }
 
 
@@ -106,8 +106,7 @@ function game() {
     // Declaring variables
     let playerSelection;
     let computerSelection;
-    let playerScore = 0;
-    let ComputerScore = 0;
+    let scoreTable = [];
     let result;
 
     // Selection for round 1
