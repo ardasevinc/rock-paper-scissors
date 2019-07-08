@@ -32,7 +32,6 @@ function capitalize(string) {
     }
 }
 
-let winner = "";
 
 function decideWinner(computerSelection, playerSelection) {
     // Decides on the winner item according to their priority.
@@ -41,39 +40,32 @@ function decideWinner(computerSelection, playerSelection) {
     let drawMsg = "It's a draw.";
 
     if (computerSelection === playerSelection) {
-        winner = "draw";
         return drawMsg;
     }
 
     else if (computerSelection === "Rock") {
         if (playerSelection === "Scissors") {
-            winner = "computer";
             return computerWinMsg;
         }
         else {
-            winner = "player";
             return playerWinMsg;
         } 
     }
 
     else if (computerSelection === "Paper") {
         if (playerSelection === "Rock") {
-            winner = "computer";
             return computerWinMsg;
         } 
         else {
-            winner = "player";
             return playerWinMsg;
         } 
     }
 
     else if (computerSelection === "Scissors") {
         if (playerSelection === "Paper") {
-            winner = "computer";
             return computerWinMsg;
         } 
         else {
-            winner = "player";
             return playerWinMsg;
         } 
     }
