@@ -22,6 +22,7 @@ function generateRandomNum(end) {
     return Math.floor(Math.random() * Math.floor(end));
 }
 
+
 function capitalize(string) {
     if (typeof(string) !== "string") {
         console.error("Datatype not string in capitalize()");
@@ -31,33 +32,53 @@ function capitalize(string) {
     }
 }
 
+let winner = "";
 
-function decideWinningItem(firstItem, secondItem) {
+function decideWinner(computerSelection, playerSelection) {
     // Decides on the winner item according to their priority.
+    let computerWinMsg = `Computer wins! ${computerSelection} beats ${playerSelection}.`;
+    let playerWinMsg = `You win! ${playerSelection} beats ${computerSelection}.`; 
+    let drawMsg = "It's a draw.";
 
-    if (firstItem === "Rock") {
-        if (secondItem === "Scissors") return firstItem;
-        else return secondItem;
+    if (computerSelection === playerSelection) {
+        winner = "draw";
+        return drawMsg;
     }
 
-    else if (firstItem === "Paper") {
-        if (secondItem === "Rock") return firstItem;
-        else return secondItem;
+    else if (computerSelection === "Rock") {
+        if (playerSelection === "Scissors") {
+            winner = "computer";
+            return computerWinMsg;
+        }
+        else {
+            winner = "player";
+            return playerWinMsg;
+        } 
     }
 
-    else if (firstItem === "Scissors") {
-        if (secondItem === "Paper") return firstItem;
-        else return secondItem;
+    else if (computerSelection === "Paper") {
+        if (playerSelection === "Rock") {
+            winner = "computer";
+            return computerWinMsg;
+        } 
+        else {
+            winner = "player";
+            return playerWinMsg;
+        } 
     }
 
-    else console.error(`Function 'decideWinningItem' got firstItem=${firstItem}`)
-}
+    else if (computerSelection === "Scissors") {
+        if (playerSelection === "Paper") {
+            winner = "computer";
+            return computerWinMsg;
+        } 
+        else {
+            winner = "player";
+            return playerWinMsg;
+        } 
+    }
 
-function decideWinner(returnVal) {
-    if (returnVal === -1) return "draw";
-    else if (returnVal === 0) return "computer";
-    else if (returnVal === 1) return "you";
-    else console.error(`Function 'decideWinner' got returnVal=${returnVal}`);
+    else console.error(`Function 'decideWinningItem' got computerSelection=${computerSelection}`)
 }
 
 
@@ -71,13 +92,11 @@ function playRound(computerSelection, playerSelection) {
     console.info(`You chose ${playerSelection}`);
     console.info(`Computer chose ${computerSelection}`);
 
-    let roundWinner = decideWinningItem(computerSelection, playerSelection);
-
-    // Determines the winner
-    if (playerSelection === computerSelection) return -1;
-    else if (roundWinner === computerSelection) return 0;
-    else if (roundWinner === playerSelection) return 1;
-    else console.error("'RoundWinner' is problematic"); // If the winner can't be determined.
+    // Round begins
+    let roundWinner = decideWinner(computerSelection, playerSelection);
+    
+    // Return the result
+    return roundWinner;
 }
 
 function game() {
@@ -86,15 +105,21 @@ function game() {
     // Declaring variables
     let playerSelection;
     let computerSelection;
-    let playerScore;
-    let ComputerScore;
+    let playerScore = 0;
+    let ComputerScore = 0;
+    let result;
 
-    // Player-computer decides on their weapons for round 1
+    // Selection for round 1
     playerSelection = prompt("Choose one: Rock, Paper or Scissors", "");
     computerSelection = computerPlay();
 
-    // Round 1
+    // Begin round 1
     result = playRound(computerSelection, playerSelection);
+    console.log(result);
     
+    // Selection for round 2
+    playerSelection = prompt("Choose one: Rock, Paper or Scissors", "");
+    computerSelection = computerPlay();
 
+    // Begin round 2
 }
