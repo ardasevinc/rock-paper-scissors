@@ -66,5 +66,5 @@ function playRockPaperScissors(computerSelection, playerSelection) {
     // Determines the winner
     if (roundWinner === computerSelection) return "You lose";
     else if (roundWinner === playerSelection) return "Computer wins";
-    else console.error("'RoundWinnder' is problematic"); // If the winner can't be determined.
+    else console.error("'RoundWinner' is problematic"); // If the winner can't be determined.
 }
