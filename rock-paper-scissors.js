@@ -61,11 +61,14 @@ function playRockPaperScissors(computerSelection, playerSelection) {
     playerSelection = capitalize(playerSelection.toLowerCase()); 
     computerSelection = capitalize(computerSelection.toLowerCase()); 
 
+    console.info(`You chose ${playerSelection}`);
+    console.info(`Computer chose ${computerSelection}`);
+
     let roundWinner = decideWinningItem(computerSelection, playerSelection);
 
     // Determines the winner
     if (playerSelection === computerSelection) return "It's a draw";
-    else if (roundWinner === computerSelection) return "You lose";
-    else if (roundWinner === playerSelection) return "Computer wins";
+    else if (roundWinner === computerSelection) return `You lose, ${computerSelection} beats ${playerSelection}`;
+    else if (roundWinner === playerSelection) return `You win, ${playerSelection} beats ${computerSelection}`;
     else console.error("'RoundWinner' is problematic"); // If the winner can't be determined.
 }
