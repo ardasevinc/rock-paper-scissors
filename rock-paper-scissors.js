@@ -177,6 +177,7 @@ function game() {
 
     // Update the scores
     scoreTable = whoWon(result, scoreTable);
+    console.info(`Scores: You->${scoreTable[1]}, Computer->${scoreTable[0]}`);
 
     console.log("Game ended.");
     if (scoreTable[0] > scoreTable[1]) console.log("You lost the game.");
