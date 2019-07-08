@@ -111,7 +111,7 @@ function game() {
 
     // Selection for round 1
     console.info("Round 1!");
-    console.info(`Scores: You->${playerScore}, Computer->${ComputerScore}`);
+    console.info(`Scores: You->${scoreTable[1]}, Computer->${scoreTable[0]}`);
     
     playerSelection = prompt("Choose one: Rock, Paper or Scissors", "");
     computerSelection = computerPlay();
@@ -120,13 +120,13 @@ function game() {
     result = playRound(computerSelection, playerSelection);
     
     // Update the scores
-    
+    scoreTable = whoWon(result, scoreTable);
 
     console.log(result);
     
     // Selection for round 2
     console.info("Round 2!");
-    console.info(`Scores: You->${playerScore}, Computer->${ComputerScore}`);
+    console.info(`Scores: You->${scoreTable[1]}, Computer->${scoreTable[0]}`);
 
     playerSelection = prompt("Choose one: Rock, Paper or Scissors", "");
     computerSelection = computerPlay();
@@ -135,5 +135,49 @@ function game() {
     result = playRound(computerSelection, playerSelection);
 
     // Update the scores
+    scoreTable = whoWon(result, scoreTable);
 
+    // Selection for round 3
+    console.info("Round 3!");
+    console.info(`Scores: You->${scoreTable[1]}, Computer->${scoreTable[0]}`);
+
+    playerSelection = prompt("Choose one: Rock, Paper or Scissors", "");
+    computerSelection = computerPlay();
+
+    // Begin round 3
+    result = playRound(computerSelection, playerSelection);
+
+    // Update the scores
+    scoreTable = whoWon(result, scoreTable);
+
+    // Selection for round 4
+    console.info("Round 4!");
+    console.info(`Scores: You->${scoreTable[1]}, Computer->${scoreTable[0]}`);
+
+    playerSelection = prompt("Choose one: Rock, Paper or Scissors", "");
+    computerSelection = computerPlay();
+
+    // Begin round 4
+    result = playRound(computerSelection, playerSelection);
+
+    // Update the scores
+    scoreTable = whoWon(result, scoreTable);
+
+    // Selection for round 5
+    console.info("Last Round!");
+    console.info(`Scores: You->${scoreTable[1]}, Computer->${scoreTable[0]}`);
+
+    playerSelection = prompt("Choose one: Rock, Paper or Scissors", "");
+    computerSelection = computerPlay();
+
+    // Begin the last round
+    result = playRound(computerSelection, playerSelection);
+
+    // Update the scores
+    scoreTable = whoWon(result, scoreTable);
+
+    console.log("Game ended.");
+    if (scoreTable[0] > scoreTable[1]) console.log("You lost the game.");
+    else if (scoreTable[1] > scoreTable[0]) console.log("You won the game!");
+    else console.log("Game is a draw!");
 }
