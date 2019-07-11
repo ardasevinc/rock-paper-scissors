@@ -28,6 +28,18 @@ section.game-panel {
     border-bottom: .5px solid black;
 }
 
+.score-table {
+    height: 1.3rem;
+    text-align: center;
+    border-bottom: 0.5px solid black;
+    padding-top: .2rem;
+}
+
+#scores {
+    font-size: 1rem;
+  
+}
+
 section.controls {
     height: 35vh;
     border-bottom: .5px solid black;
