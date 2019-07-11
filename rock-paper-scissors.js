@@ -35,6 +35,7 @@ function capitalize(string) {
 
 function decideWinner(computerSelection, playerSelection) {
     // Decides on the winner item according to their priority.
+    
     let computerWinMsg = `Computer wins! ${computerSelection} beats ${playerSelection}.`;
     let playerWinMsg = `You win! ${playerSelection} beats ${computerSelection}.`; 
     let drawMsg = "It's a draw.";
