@@ -24,6 +24,7 @@ header h1 {
 }
 
 section.game-panel {
+    position: relative;
     height: 40vh;
     border-bottom: .5px solid black;
 }
@@ -40,10 +41,54 @@ section.game-panel {
   
 }
 
+#player-selection {
+    position: relative;
+    float: left;
+    width: 10rem;
+    height: 8rem;
+    background-color: blue;
+    top: 1rem;
+    left: 15vw;
+    
+}
+
+#computer-selection {
+    position: relative;
+    float: right;
+    width: 10rem;
+    height: 8rem;
+    background-color: blue;
+    top: 1rem;
+    right: 15vw;
+}
+
+#round-result {
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    height: calc(40vh - 10.3rem);
+    border-top: 0.5px solid black;
+}
+
 section.controls {
     height: 35vh;
     border-bottom: .5px solid black;
 }
+
+#user-controls {
+    float: left;
+    width: 50vw;
+}
+
+#user-controls span {
+    text-align: center;
+}
+
+#computer-controls {
+    float: right;
+    width: 50vw;
+}
+
 
 footer {
     height: 10vh;
