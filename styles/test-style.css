@@ -11,9 +11,21 @@ body {
     height: inherit;
 }
 
-.game {
-    text-align: center;
+header {
     height: 15vh;
-    overflow: hidden;
-    border-bottom: .5px solid black;
+    text-align: center;
+}
+
+.game {
+    height: 75vh;
+}
+
+.score-table {
+    text-align: center;
+}
+
+
+
+footer {
+    height: 10vh;
 }
