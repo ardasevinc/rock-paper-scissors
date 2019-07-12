@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="./styles/reset.css">
     <link rel="stylesheet" type="text/css" href="./styles/test-style.css">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:400,700&display=swap" rel="stylesheet">  
 </head>
 <html>
     <body>
@@ -14,40 +16,42 @@
         <main class="game">
             <section class="game-panel">
                 
-                <div class="score-table">
+                <section class="score-table">
                     <span id="scores">555:555</span>
-                </div>
+                </section>
                 
                 <section class="selections">
 
-                    <div id="player-selection"></div>
-                    <div id="computer-selection"></div>
+                    <div id="player-selection"></div><!--
+                 --><div id="computer-selection"></div>
 
                 </section>
 
-                <div id="round-result"></div>
+                <section class="results">
+                    <div id="round-result"></div>
+                </section>
 
             </section>
 
             <section class="controls">
                 <div id="user-controls">
                     <span>You</span>
-                    <div class="Rock">Rock</div>
-                    <div class="Paper">Paper</div>
-                    <div class="Scissors">Scissors</div>
-                </div>
+                    <button name="rock" type="button">Rock</button>
+                    <button name="paper" type="button">Paper</button>
+                    <button name="scissors" type="button">Scissors</button>
+                </div><!--
 
-                <div id="computer-controls">
+                --><div id="computer-controls">
                     <span>Computer</span>
-                    <div class="Rock">Rock</div>
-                    <div class="Paper">Paper</div>
-                    <div class="Scissors">Scissors</div>
+                    <button name="rock" type="button">Rock</button>
+                    <button name="paper" type="button">Paper</button>
+                    <button name="scissors" type="button">Scissors</button>
                 </div>
             </section>
         </main>
 
         <footer>
-            <a href = "https://github.com/ardasevinc/" id="author"><span>Arda Sevinç</span></a>
+            <a target = "_blank" href = "https://github.com/ardasevinc/" id="author"><span>Arda Sevinç</span></a>
         </footer>
     </body>
 </html>
