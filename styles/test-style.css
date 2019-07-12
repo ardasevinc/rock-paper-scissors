@@ -30,7 +30,7 @@ header h1 {
 }
 
 .game-panel {
-    border: 0.18rem dotted black;
+    /*border: 0.18rem dotted black;*/
     height: 45vh;
 }
 
@@ -69,6 +69,7 @@ header h1 {
 .results {
     text-align: center;
     height: 10vh;
+    padding-top: 3vh;
 }
 
 .controls {
@@ -78,7 +79,7 @@ header h1 {
 
 .controls>div {
     display: inline-block;
-    border: .15rem solid rgba(255,255,255,0.7);
+    /*border: .15rem solid rgba(255,255,255,0.7);*/
     
 }
 
