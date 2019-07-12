@@ -1,0 +1,19 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    outline: none;
+    height: 100vh;
+}
+
+body {
+    height: inherit;
+}
+
+.game {
+    text-align: center;
+    height: 15vh;
+    overflow: hidden;
+    border-bottom: .5px solid black;
+}
