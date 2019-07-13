@@ -10,6 +10,7 @@ html {
     outline: none;
     height: 100vh;
     background-image: linear-gradient(to bottom right, rgba(55, 0, 255, 0.89), rgba(81, 237, 239, 0.9));
+    font-family: 'Roboto Slab', serif; 
 }
 
 body {
@@ -42,6 +43,7 @@ header h1 {
 .begin {
     position: relative;
     height: 30vh;
+    background-color: rgba(0, 0, 0, 0.4);
     
 }
 
@@ -50,6 +52,7 @@ header h1 {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    font-size: 1.6rem;
 }
 
 .score-table {
@@ -130,6 +133,8 @@ header h1 {
 footer {
     height: 10vh;
     overflow: hidden;
+    border-top: .1rem solid rgba(0, 0, 0, 0.6);
+    
 }
 
 footer span {
