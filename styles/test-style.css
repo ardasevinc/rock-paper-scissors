@@ -135,27 +135,34 @@ header h1 {
 }
 
 footer {
+    position: relative;
     height: 10vh;
     overflow: hidden;
     border-top: .1rem solid rgba(0, 0, 0, 0.6);
     
 }
 
-footer span {
+footer a {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+/*
+footer a {
+    color: black;
+    font-family: 'Indie Flower', cursive;
+    font-size: 1.45rem;
+    letter-spacing: 0.1rem;
     display: inline-block;
     position: absolute;
     bottom: 1vh;
     left: 1vh;
     padding-left: 0.8rem;
+    overflow: hidden;
+    margin: .2m;
 }
-
-footer a {
-    color: black;
-    font-family: 'Indie Flower', cursive;
-    font-size: 1.45rem;
-    letter-spacing: 0.1rem;;
-}
-
+*/
 footer span:hover {
     text-decoration: underline;
     font-weight: 900;
