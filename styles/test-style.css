@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+.not-visible {
+    display: none;
+}
+
 html {
     outline: none;
     height: 100vh;
@@ -23,6 +27,7 @@ header h1 {
     font-size: 2.5rem;
     font-weight: 700;
     color: white;
+    letter-spacing: 0.2rem;
 }
 
 .game {
@@ -32,6 +37,19 @@ header h1 {
 .game-panel {
     /*border: 0.18rem dotted black;*/
     height: 45vh;
+}
+
+.begin {
+    position: relative;
+    height: 30vh;
+    
+}
+
+.begin span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .score-table {
@@ -123,9 +141,10 @@ footer span {
 }
 
 footer a {
-    color: yellow;
+    color: black;
     font-family: 'Indie Flower', cursive;
     font-size: 1.45rem;
+    letter-spacing: 0.1rem;;
 }
 
 footer span:hover {
