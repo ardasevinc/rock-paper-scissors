@@ -32,7 +32,7 @@ header h1 {
 }
 
 .game {
-    height: 75vh;
+    height: 78vh;
 }
 
 .game-panel {
@@ -42,6 +42,7 @@ header h1 {
 
 .begin {
     position: relative;
+    overflow: hidden;
     height: 30vh;
     background-color: rgba(0, 0, 0, 0.4);
     
@@ -88,20 +89,29 @@ header h1 {
 }
 
 .results {
-    text-align: center;
+    position: relative;
     height: 10vh;
-    padding-top: 3vh;
+    padding-top: 2vh;
+}
+
+#round-result {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .controls {
-    height: 30vh;
-    padding-top: 10vh;
+    height: 33vh;
 }
 
 .controls>div {
     display: inline-block;
     /*border: .15rem solid rgba(255,255,255,0.7);*/
-    
+    padding-top: .8rem;
+    padding-bottom: 1rem;
+    border: 2px solid black;
+    border-radius: 1rem;
 }
 
 #user-controls {
@@ -131,7 +141,7 @@ header h1 {
 }
 
 footer {
-    height: 10vh;
+    height: 7vh;
     overflow: hidden;
     border-top: .1rem solid rgba(0, 0, 0, 0.6);
     
