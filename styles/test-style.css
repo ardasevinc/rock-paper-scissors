@@ -43,7 +43,7 @@ header h1 {
 .begin {
     position: relative;
     overflow: hidden;
-    height: 30vh;
+    height: 45vh;
     background-color: rgba(0, 0, 0, 0.4);
     
 }
@@ -103,30 +103,30 @@ header h1 {
 
 .controls {
     height: 33vh;
+    padding-top: 2vh;
 }
 
 .controls>div {
     display: inline-block;
-    /*border: .15rem solid rgba(255,255,255,0.7);*/
-    padding-top: .8rem;
     padding-bottom: 1rem;
     border: 2px solid black;
     border-radius: 1rem;
+    
 }
 
 #user-controls {
     position: relative;
-    left: 4vw;
+    left: 2vw;
     float: left;
-    width: 40vw;
+    width: 45vw;
     text-align: center;
 }
 
 #computer-controls {
     position: relative;
     float: right;
-    right: 4vw;
-    width: 40vw;
+    right: 2vw;
+    width: 45vw;
     text-align: center;
 }
 
