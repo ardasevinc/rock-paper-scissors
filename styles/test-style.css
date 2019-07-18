@@ -103,9 +103,8 @@ header h1 {
 .controls>div {
     display: inline-block;
     padding-bottom: 1rem;
-    border: 2px solid black;
-    border-radius: 1rem;
-    
+    border: 2px solid white;
+    border-radius: 12px;
 }
 
 #user-controls {
