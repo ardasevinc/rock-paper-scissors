@@ -7,9 +7,9 @@
 }
 
 .rock-img {
-    background-image: url('../img/rock.jpg');
+    background-image: url('../img/rockrock.jpg');
     background-repeat: no-repeat;
-    background-size: 400px 300px ;
+    background-size: 400px 300px;
     background-position: center;
     
 }
@@ -90,13 +90,13 @@ header h1 {
 #player-selection {
     float: left;
     width: 40vw;
-    height: 25vh;
+    height: 30vh;
 }
 
 #computer-selection {
     float: right;
     width: 40vw;
-    height: 25vh;
+    height: 30vh;
 }
 
 .results {
