@@ -10,7 +10,7 @@
     background-image: url('../img/rock.jpg');
     background-repeat: no-repeat;
     background-size: 400px 300px ;
-    background-position: center top;
+    background-position: center;
     
 }
 
@@ -151,7 +151,8 @@ header h1 {
 }
 
 .rock, .paper, .scissors {
-    padding: .34em;
+    padding: .6em;
+    width: 6em;
     color: white;
     background-color: rgba(0,0,0,0.5);
     font-weight: bold;
@@ -167,7 +168,7 @@ header h1 {
     -webkit-transition-duration: 0.3s;
     transition-duration: 0.3s;
     background-color: rgba(0, 0, 0, 0.8);
-    border: .16em solid white;
+    border: .2em solid white;
 }
 
 footer {
