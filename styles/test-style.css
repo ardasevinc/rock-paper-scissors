@@ -6,6 +6,27 @@
     display: none;
 }
 
+.rock-img {
+    background-image: url('../img/rock.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;    
+}
+
+.paper-img {
+    background-image: url('../img/paper.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.scissors-img {
+    background-image: url('../img/scissors.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
 html {
     outline: none;
     height: 100vh;
@@ -72,6 +93,11 @@ header h1 {
     left: 4vw;
     width: 40vw;
     height: 25vh;
+    background-image: url("../img/paper.jpg");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    
 }
 
 #computer-selection {
@@ -80,6 +106,10 @@ header h1 {
     right: 4vw;
     width: 40vw;
     height: 25vh;
+    background-image: url("../img/rock.jpg");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .results {
@@ -153,21 +183,6 @@ footer a {
     letter-spacing: .09rem;
 } 
 
-/*
-footer a {
-    color: black;
-    font-family: 'Indie Flower', cursive;
-    font-size: 1.45rem;
-    letter-spacing: 0.1rem;
-    display: inline-block;
-    position: absolute;
-    bottom: 1vh;
-    left: 1vh;
-    padding-left: 0.8rem;
-    overflow: hidden;
-    margin: .2m;
-}
-*/
 footer span:hover {
     text-decoration: underline;
     font-weight: 900;
