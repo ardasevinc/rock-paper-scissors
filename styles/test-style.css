@@ -159,6 +159,8 @@ header h1 {
     text-align: center;
     text-decoration: none;
     border: .16em solid black;
+    border-radius: 6px;
+    box-shadow: .16em .5em rgba(0, 0, 0, 0.2);
     font-size: .9em;
     cursor: pointer;
 }
@@ -168,14 +170,28 @@ header h1 {
     -webkit-transition-duration: 0.3s;
     transition-duration: 0.3s;
     background-color: rgba(0, 0, 0, 0.8);
-    border: .2em solid white;
+    border: .16em solid white;
+    
 }
 
+.rock:active, .paper:active, .scissors:active {
+    -moz-transition-duration: .005s;
+    -webkit-transition-duration: .005s;
+    transition-duration: .005s;
+    border: .16em solid white;
+    transform: translateY(4px);
+    box-shadow: .16em .4em rgba(0, 0, 0, 0.56);
+}
+
+#computer-controls .rock, #computer-controls .paper, #computer-controls .scissors {
+    cursor: not-allowed;
+}
+    
 footer {
     position: relative;
     height: 10vh;
     overflow: hidden;
-    border-top: .1rem solid rgba(0, 0, 0, 0.6);
+    border-top: .1rem solid blue;
     
 }
 
