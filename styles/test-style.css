@@ -9,22 +9,22 @@
 .rock-img {
     background-image: url('../img/rock.jpg');
     background-repeat: no-repeat;
-    background-size: 400px 25vh;
-    background-position: center;
+    background-size: 400px 300px ;
+    background-position: center top;
     
 }
 
 .paper-img {
     background-image: url('../img/paper.jpg');
     background-repeat: no-repeat;
-    background-size: 400px 25vh;
+    background-size: 400px 300px;
     background-position: center;
 }
 
 .scissors-img {
     background-image: url('../img/scissors.jpg');
     background-repeat: no-repeat;
-    background-size: 400px 25vh;
+    background-size: 400px 300px;
     background-position: center;
 }
 
@@ -150,6 +150,25 @@ header h1 {
     padding-bottom: 2em;   
 }
 
+.rock, .paper, .scissors {
+    padding: .34em;
+    color: white;
+    background-color: rgba(0,0,0,0.5);
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border: .16em solid black;
+    font-size: .9em;
+    cursor: pointer;
+}
+
+.rock:hover, .paper:hover, .scissors:hover {
+    -moz-transition-duration: 0.3s;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    background-color: rgba(0, 0, 0, 0.8);
+    border: .16em solid white;
+}
 
 footer {
     position: relative;
@@ -177,4 +196,5 @@ footer span:hover {
 
 footer a:visited {
     color: white;
+    
 }
