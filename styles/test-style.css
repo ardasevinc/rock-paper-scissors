@@ -9,22 +9,23 @@
 .rock-img {
     background-image: url('../img/rock.jpg');
     background-repeat: no-repeat;
+    background-size: 400px 25vh;
     background-position: center;
-    background-size: contain;    
+    
 }
 
 .paper-img {
     background-image: url('../img/paper.jpg');
     background-repeat: no-repeat;
+    background-size: 400px 25vh;
     background-position: center;
-    background-size: contain;
 }
 
 .scissors-img {
     background-image: url('../img/scissors.jpg');
     background-repeat: no-repeat;
+    background-size: 400px 25vh;
     background-position: center;
-    background-size: contain;
 }
 
 html {
@@ -83,22 +84,17 @@ header h1 {
 }
 
 .selections {
-    text-align: center;
     height: 30vh;
 }
 
 #player-selection {
-    position: relative;
     float: left;
-    left: 4vw;
     width: 40vw;
     height: 25vh;
 }
 
 #computer-selection {
-    position: relative;
     float: right;
-    right: 4vw;
     width: 40vw;
     height: 25vh;
 }
