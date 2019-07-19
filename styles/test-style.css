@@ -110,7 +110,7 @@ header h1 {
 
 #user-controls {
     position: relative;
-    left: 2vw;
+    left: 6vw;
     float: left;
     min-width: 20vw;
     max-width: 35vw;
@@ -121,7 +121,7 @@ header h1 {
 #computer-controls {
     position: relative;
     float: right;
-    right: 2vw;
+    right: 6vw;
     min-width: 20vw;
     max-width: 35vw;
     max-height: 25vh;
