@@ -97,12 +97,13 @@ header h1 {
 
 .controls {
     height: 30vh;
-    padding-top: 2vh;
+    padding-top: 4vh;
+    overflow: auto;
 }
 
 .controls>div {
     display: inline-block;
-    padding-bottom: 1rem;
+    padding: 2em;
     border: 2px solid white;
     border-radius: 12px;
 }
@@ -111,7 +112,9 @@ header h1 {
     position: relative;
     left: 2vw;
     float: left;
-    width: 45vw;
+    min-width: 20vw;
+    max-width: 35vw;
+    max-height: 25vh;
     text-align: center;
 }
 
@@ -119,19 +122,17 @@ header h1 {
     position: relative;
     float: right;
     right: 2vw;
-    width: 45vw;
+    min-width: 20vw;
+    max-width: 35vw;
+    max-height: 25vh;
     text-align: center;
 }
 
-#user-controls span {
+#user-controls span, #computer-controls span {
     display: block;
-    margin-bottom: 5vw;
+    padding-bottom: 2em;   
 }
 
-#computer-controls span {
-    display: block;
-    margin-bottom: 5vw;
-}
 
 footer {
     position: relative;
@@ -143,9 +144,14 @@ footer {
 
 footer a {
     position: absolute;
-    left: 0;
-    bottom: 0;
-}
+    left: 1vw;;
+    bottom: 1vh;
+    text-decoration: none;
+    color: black;
+    font-family: 'Indie Flower', cursive;
+    font-size: 1.45rem;
+    letter-spacing: .09rem;
+} 
 
 /*
 footer a {
