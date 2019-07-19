@@ -1,7 +1,7 @@
 # What is this?
 
 This is an amateur javascript project for learning purposes.
-You play rock-paper-scissors from the console.
+You play rock-paper-scissors.
 
 ## How to play?
 
@@ -20,6 +20,11 @@ Call the game function to start playing.
 #### Example
 
 `game()`
+
+## Status 
+
+Front-end 80% completed.
+Javascript: Only the game engine. 
 
 ## License
 
