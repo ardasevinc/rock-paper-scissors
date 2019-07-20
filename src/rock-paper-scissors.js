@@ -99,3 +99,53 @@ function playRound(computerSelection, playerSelection) {
     // Return the result
     return roundWinner;
 }
+
+
+function whichTransitionEvent() {
+    let t;
+    el = document.querySelector('.computer-selected');
+    
+    let transitions = {
+      'transition':'transitionend',
+      'OTransition':'oTransitionEnd',
+      'MozTransition':'transitionend',
+      'WebkitTransition':'webkitTransitionEnd'
+    }
+
+    for (t in transitions) {
+        if (el.style[t] !== undefined) {
+            return transitions[t];
+        }
+    }
+
+    console.warn('ERROR in whichTransitionEvent');
+}
+
+
+function startTransition(el) {
+    el.classList.add('computer-selected');
+}
+
+function endTransition(el) {
+    let transitionEnd = whichTransitionEvent();
+    
+    el.addEventListener(transitionEnd, removeSelection);
+    
+    function removeSelection() {
+        el.classList.add('computer-selected-remove');
+        
+        el.addEventListener(transitionEnd, () => {
+            el.classList.remove('computer-selected-remove');
+            el.classList.remove('computer-selected');
+        });
+    }
+}
+
+function computerSelect(selection) {
+    if (typeof(selection) !== 'string') console.warn(`ERROR computerSelect() got a nonstring: ${selection}`);
+    else {
+        let el = document.querySelector('.' + selection)
+        startTransition(el);
+        endTransition(el);
+    }
+}
