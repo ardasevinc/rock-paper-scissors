@@ -2,13 +2,13 @@ function computerPlay() {
     randomNum = generateRandomNum(2);
 
     if (randomNum === 0) {
-        return "Rock";
+        return "rock";
     }
     else if (randomNum === 1) {
-        return "Paper";
+        return "paper";
     }
     else if (randomNum === 2) {
-        return "Scissors";
+        return "scissors";
     }
     else {
         console.warn(`Function computerPlay() got randomNum=${randomNum}`);
@@ -24,6 +24,7 @@ function generateRandomNum(end) {
 
 
 function capitalize(string) {
+
     if (typeof(string) !== "string") {
         console.error("Datatype not string in capitalize()");
     }
@@ -33,7 +34,7 @@ function capitalize(string) {
 }
 
 
-function decideWinner(computerSelection, playerSelection) {
+function decideWinner(playerSelection, computerSelection) {
     // Decides on the winner item according to their priority.
     
     let computerWinMsg = `Computer wins! ${computerSelection} beats ${playerSelection}.`;
@@ -44,8 +45,8 @@ function decideWinner(computerSelection, playerSelection) {
         return drawMsg;
     }
 
-    else if (computerSelection === "Rock") {
-        if (playerSelection === "Scissors") {
+    else if (computerSelection === "rock") {
+        if (playerSelection === "scissors") {
             return computerWinMsg;
         }
         else {
@@ -53,8 +54,8 @@ function decideWinner(computerSelection, playerSelection) {
         } 
     }
 
-    else if (computerSelection === "Paper") {
-        if (playerSelection === "Rock") {
+    else if (computerSelection === "paper") {
+        if (playerSelection === "rock") {
             return computerWinMsg;
         } 
         else {
@@ -62,8 +63,8 @@ function decideWinner(computerSelection, playerSelection) {
         } 
     }
 
-    else if (computerSelection === "Scissors") {
-        if (playerSelection === "Paper") {
+    else if (computerSelection === "scissors") {
+        if (playerSelection === "paper") {
             return computerWinMsg;
         } 
         else {
@@ -76,25 +77,26 @@ function decideWinner(computerSelection, playerSelection) {
 
 
 function whoWon(result, scoreTable) {
-    if (result.includes("You win")) scoreTable[1] += 1;
-    else if (result.includes("Computer wins")) scoreTable[0] += 1;
+
+    if (result.includes("You win")) scoreTable[0] += 1;
+    else if (result.includes("Computer wins")) scoreTable[1] += 1;
 
     return scoreTable;
 }
 
 
-function playRound(computerSelection, playerSelection) {
+function playRound(playerSelection, computerSelection) {
     // Plays one round of the game
 
     // Case insensitivity
-    playerSelection = capitalize(playerSelection.toLowerCase()); 
-    computerSelection = capitalize(computerSelection.toLowerCase()); 
+    playerSelection = playerSelection.toLowerCase(); 
+    computerSelection = computerSelection.toLowerCase(); 
 
     console.info(`You chose ${playerSelection}`);
     console.info(`Computer chose ${computerSelection}`);
 
     // Round begins
-    let roundWinner = decideWinner(computerSelection, playerSelection);
+    let roundWinner = decideWinner(playerSelection, computerSelection);
     
     // Return the result
     return roundWinner;
@@ -144,6 +146,7 @@ function endTransition(el) {
 
 
 function computerSelect(selection) {
+
     if (typeof(selection) !== 'string') console.warn(`ERROR computerSelect() got a nonstring: ${selection}`);
     else {
         let el = document.querySelector('.' + selection)
@@ -153,12 +156,12 @@ function computerSelect(selection) {
 }
 
 
-function initGamePanel() {
-    let gameStartClear = 0;
+function initBeginPanel() {
+    let gameStartClear = 0; 
     
-    beginPanel = document.querySelector('.begin');
-    endPanel = document.querySelector('.end');
-    gamePanel = document.querySelector('.game-panel');
+    let beginPanel = document.querySelector('.begin');
+    let endPanel = document.querySelector('.end');
+    let gamePanel = document.querySelector('.game-panel');
 
     // Change panel visibility to begin the game
 
@@ -172,16 +175,62 @@ function initGamePanel() {
 }
 
 
-function getUserSelection() {
+function initGamePanel(gameStartClearFlag) {
 
+    if (gameStartClearFlag === 1) {
+        let beginPanel = document.querySelector('.begin');
+        let gamePanel = document.querySelector('.game-panel');
+
+        let scoreTable = document.querySelector('.score-table');
+        let playerSelection = document.querySelector('#player-selection');
+        let computerSelection = document.querySelector('#computer-selection');
+        let results = document.querySelector('.results');
+
+        // Reset score related elements
+
+        scoreTable.textContent = '0:0';
+        playerSelection.className = null;
+        computerSelection.className = null;
+
+        // Change game panel class to make it visible
+
+        beginPanel.classList.add('not-visible');
+        gamePanel.classList.remove('not-visible');
+
+        return 1;
+    }
+    
+    else console.error('ERROR gameStartClearFlag not 1');
+}
+
+
+function getUserSelection() {
+    let buttons = document.querySelectorAll('#user-controls button');
+
+    for (let i=0; i<buttons.length; i++) {
+        buttons[i].addEventListener('click', (e) => {
+            console.info(`Player selected ${e.srcElement.className}`);
+            return e.srcElement.className;
+        });
+    }
 }
 
 
 function displayUserSelection(selectedItem) {
-
+    let userSelectionDisplay = document.querySelector('#user-selection');
+    
+    userSelectionDisplay.className = selectedItem + "-img";
 }
 
 
 function displayComputerSelection(selectedItem) {
+    let computerSelectionDisplay = document.querySelector('#computer-selection');
 
+    let computerSelectedButton = document.querySelector(`#computer-controls ${selectedItem}`);
+
+    startTransition(computerSelectedButton);
+    endTransition(computerSelectedButton);
+
+    computerSelectionDisplay.className = selectedItem + '-img';
 }
+
