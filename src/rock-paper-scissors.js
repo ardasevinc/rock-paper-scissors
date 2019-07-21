@@ -11,7 +11,7 @@ function computerPlay() {
         return "Scissors";
     }
     else {
-        console.warn(`Function 'computerPlay' got randomNum=${randomNum}`);
+        console.warn(`Function computerPlay() got randomNum=${randomNum}`);
     }
 }
 
@@ -28,7 +28,7 @@ function capitalize(string) {
         console.error("Datatype not string in capitalize()");
     }
     else {
-    return string.charAt(0).toUpperCase() + string.substring(1); 
+        return string.charAt(0).toUpperCase() + string.substring(1); 
     }
 }
 
@@ -71,13 +71,13 @@ function decideWinner(computerSelection, playerSelection) {
         } 
     }
 
-    else console.error(`Function 'decideWinningItem' got computerSelection=${computerSelection}`)
+    else console.error(`Function decideWinningItem() got computerSelection=${computerSelection}`)
 }
 
 
 function whoWon(result, scoreTable) {
-    if (result.includes("You win!")) scoreTable[1] += 1;
-    else if (result.includes("Computer wins!")) scoreTable[0] += 1;
+    if (result.includes("You win")) scoreTable[1] += 1;
+    else if (result.includes("Computer wins")) scoreTable[0] += 1;
 
     return scoreTable;
 }
@@ -153,6 +153,35 @@ function computerSelect(selection) {
 }
 
 
-function initGame() {
+function initGamePanel() {
+    let gameStartClear = 0;
     
+    beginPanel = document.querySelector('.begin');
+    endPanel = document.querySelector('.end');
+    gamePanel = document.querySelector('.game-panel');
+
+    // Change panel visibility to begin the game
+
+    beginPanel.classList.remove('not-visible');
+    endPanel.classList.add('not-visible');
+    gamePanel.classList.add('not-visible');
+    
+    gameStartClear = 1;
+    
+    return gameStartClear;
+}
+
+
+function getUserSelection() {
+
+}
+
+
+function displayUserSelection(selectedItem) {
+
+}
+
+
+function displayComputerSelection(selectedItem) {
+
 }
