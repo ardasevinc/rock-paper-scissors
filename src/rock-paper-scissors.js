@@ -126,6 +126,7 @@ function startTransition(el) {
     el.classList.add('computer-selected');
 }
 
+
 function endTransition(el) {
     let transitionEnd = whichTransitionEvent();
     
@@ -141,6 +142,7 @@ function endTransition(el) {
     }
 }
 
+
 function computerSelect(selection) {
     if (typeof(selection) !== 'string') console.warn(`ERROR computerSelect() got a nonstring: ${selection}`);
     else {
@@ -148,4 +150,9 @@ function computerSelect(selection) {
         startTransition(el);
         endTransition(el);
     }
+}
+
+
+function initGame() {
+    
 }
