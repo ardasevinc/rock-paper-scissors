@@ -79,12 +79,17 @@ header h1 {
 }
 
 .end {
-    position: relative;
     height: 45vh;
     overflow: hidden;
-    
 }
 
+#treasure-hunt {
+    background: transparent;
+    width: 20px;
+    height: 20px;
+    border: none !important;
+    cursor: grab;
+}
 
 .score-table {
     text-align: center;
