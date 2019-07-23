@@ -93,9 +93,6 @@ function whoWon(result, scoreTable) {
 function playRound(playerSelection, computerSelection) {
     // Plays one round of the game
 
-    console.info(`You chose ${playerSelection}`);
-    console.info(`Computer chose ${computerSelection}`);
-
     // Round begins
     let roundWinner = decideWinner(playerSelection, computerSelection);
     
