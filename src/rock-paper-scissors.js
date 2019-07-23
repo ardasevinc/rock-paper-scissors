@@ -19,8 +19,13 @@ function computerPlay() {
 function generateRandomNum(end) {
     // Generates a random whole number from 0 to end
 
-    return Math.floor(Math.random() * Math.floor(end));
+    return Math.floor(Math.random() * Math.floor(end + 1));
 }
+
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
 
 
 function capitalize(string) {
@@ -88,10 +93,6 @@ function whoWon(result, scoreTable) {
 function playRound(playerSelection, computerSelection) {
     // Plays one round of the game
 
-    // Case insensitivity
-    playerSelection = playerSelection.toLowerCase(); 
-    computerSelection = computerSelection.toLowerCase(); 
-
     console.info(`You chose ${playerSelection}`);
     console.info(`Computer chose ${computerSelection}`);
 
@@ -144,7 +145,7 @@ function endTransition(el) {
     }
 }
 
-
+/*
 function computerSelect(selection) {
 
     if (typeof(selection) !== 'string') console.warn(`ERROR computerSelect() got a nonstring: ${selection}`);
@@ -154,7 +155,7 @@ function computerSelect(selection) {
         endTransition(el);
     }
 }
-
+*/
 
 function initBeginPanel() {
     let gameStartClear = 0; 
@@ -184,13 +185,14 @@ function initGamePanel(gameStartClearFlag) {
         let scoreTable = document.querySelector('.score-table');
         let playerSelection = document.querySelector('#player-selection');
         let computerSelection = document.querySelector('#computer-selection');
-        let results = document.querySelector('.results');
+        let results = document.querySelector('#round-result');
 
         // Reset score related elements
 
         scoreTable.textContent = '0:0';
         playerSelection.className = null;
         computerSelection.className = null;
+        results.textContent = "DON'T LET THE COMPUTER WIN!"
 
         // Change game panel class to make it visible
 
@@ -204,29 +206,23 @@ function initGamePanel(gameStartClearFlag) {
 }
 
 
-function getUserSelection() {
-    let buttons = document.querySelectorAll('#user-controls button');
-
-    for (let i=0; i<buttons.length; i++) {
-        buttons[i].addEventListener('click', (e) => {
-            console.info(`Player selected ${e.srcElement.className}`);
-            return e.srcElement.className;
-        });
-    }
+function catchPlayerSelection(selectedItem) {
+    return selectedItem;
 }
 
 
-function displayUserSelection(selectedItem) {
-    let userSelectionDisplay = document.querySelector('#user-selection');
+function displayPlayerSelection(selectedItem) {
+    let playerSelectionDisplay = document.querySelector('#player-selection');
     
-    userSelectionDisplay.className = selectedItem + "-img";
+    playerSelectionDisplay.className = selectedItem + "-img";
 }
 
 
 function displayComputerSelection(selectedItem) {
     let computerSelectionDisplay = document.querySelector('#computer-selection');
 
-    let computerSelectedButton = document.querySelector(`#computer-controls ${selectedItem}`);
+    let computerSelectedButton = document.querySelector(`#computer-controls .${selectedItem}`);
+
 
     startTransition(computerSelectedButton);
     endTransition(computerSelectedButton);
@@ -234,3 +230,70 @@ function displayComputerSelection(selectedItem) {
     computerSelectionDisplay.className = selectedItem + '-img';
 }
 
+
+function updateScores(updatedScoreTable) {
+    let scoreDisplay = document.querySelector('.score-table');
+    scoreDisplay.textContent = `${updatedScoreTable[0]}:${updatedScoreTable[1]}`;
+}
+
+
+function updateRoundResults(text) {
+    let roundResultDisplay = document.querySelector('#round-result');
+    roundResultDisplay.textContent = text;
+}
+
+
+function getSelections() {
+    let playerSelection;
+    let computerSelection = computerPlay();
+
+
+}
+
+
+function playGame(playerSelection) {
+    if (!(playerSelection)) {
+        console.warn(`playerSelection=${playerSelection}`);
+        return -1;
+    }
+    
+    else {
+        let gameStartClearFlag = initBeginPanel();
+    
+        if (initGamePanel(gameStartClearFlag)) {
+            let computerSelection = computerPlay();
+        
+            displayComputerSelection(computerSelection);
+            displayPlayerSelection(playerSelection);
+
+            let roundResult = playRound(playerSelection, computerSelection);
+            updateRoundResults(roundResult);
+            scoreTable = whoWon(roundResult, scoreTable);
+            updateScores(scoreTable);
+
+            return 0;
+        }
+        else {
+            console.warn(`gamestartClearFlag=${gameStartClearFlag}`); 
+            return -1;
+        }
+    }
+    
+}
+
+let roundCount = 1;
+let scoreTable = [0, 0];
+function main(playerSelection) {
+    if (!(playerSelection)) console.warn(`FATAL ERROR playerSelection=${playerSelection}`);
+    else {
+        let gameStatus = playGame(playerSelection);
+        
+        /*updateRoundResults(`Round: ${roundCount}`);*/
+        ++roundCount;
+        if(!(gameStatus)) {
+            console.info(`Round: ${roundCount}`);
+            console.info('playGame() ran without any problems');
+        } 
+        else console.warn(`playGame() returned ${gameStatus}`);
+    }
+}

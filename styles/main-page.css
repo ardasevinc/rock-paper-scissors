@@ -7,7 +7,7 @@
 }
 
 .rock-img {
-    background-image: url('../img/rockrock.jpg');
+    background-image: url('../img/rock.jpg');
     background-repeat: no-repeat;
     background-size: 400px 300px;
     background-position: center;
@@ -202,9 +202,9 @@ header h1 {
 }
 
 .computer-selected {
-    -moz-transition-duration: 1s;
-    -webkit-transition-duration: 1s;
-    transition-duration: 1s;
+    -moz-transition-duration: .1s;
+    -webkit-transition-duration: .1s;
+    transition-duration: .1s;
     border: .16em solid white;
     transform: translateY(4px);
     box-shadow: .16em .4em rgba(0, 0, 0, 0.56);
