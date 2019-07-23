@@ -24,7 +24,7 @@ Call the game function to start playing.
 ## Status 
 
 Front-end 80% completed.
-Javascript: Only the game engine. 
+Javascript-side: 95% 
 
 ## License
 
