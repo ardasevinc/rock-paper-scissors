@@ -1,4 +1,4 @@
-# What is this?
+# Rock Paper Scissors
 
 This is an amateur javascript, html/css project for learning purposes.
 You play rock-paper-scissors.
@@ -15,6 +15,12 @@ Go to my [website](https://ardasevinc.me/rock-paper-scissors/)
 
 Front-end 80% completed.
 Javascript-side: 95% 
+
+## TODO
+
+- Add round control.
+- Add multiplayer.
+- Add easter eggs
 
 ## License
 
