@@ -1,68 +1,26 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Rock Paper Scissors</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="./styles/reset.css">
-    <link rel="stylesheet" type="text/css" href="./styles/main-page.css">
-    <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Oswald:400,700&display=swap" rel="stylesheet">  
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700&display=swap" rel="stylesheet"> 
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="./styles/reset.css">
+  <link rel="stylesheet" href="./styles/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Oswald:400,700&display=swap" rel="stylesheet">  
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700&display=swap" rel="stylesheet"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
 </head>
-<html>
-    <body>
-        <header>
-            <h1>Rock Paper Scissors</h1>
-        </header>
-    
-        <main class="game">
-            <section class="begin">
-                <span>Choose your weapon to start</span>
-            </section>
-
-            <section class="end not-visible">
-                <button name="play-again" id="play-again" type="button">Play again!</button>
-                <button name="fun" id="fun" type="button">I'm bored</button>
-            </section>
-            
-            <section class="game-panel not-visible">
-                
-                <section class="score-table">
-                    <span id="scores">0:0</span>
-                </section>
-                
-                <section class="selections">
-
-                    <div id="player-selection" class="rock-img"></div><!--
-                 --><div id="computer-selection" class="scissors-img"></div>
-
-                </section>
-
-                <section class="results">
-                    <span id="round-result">DWAYNE THE ROCK WINS!!!</span>
-                </section>
-
-            </section>
-
-            <section class="controls">
-                <div id="user-controls">
-                    <span>You</span>
-                    <button class="rock" onclick="main('rock')" type="button">Rock</button>
-                    <button class="paper" onclick="main('paper')" type="button">Paper</button>
-                    <button class= "scissors" onclick="main('scissors')" type="button">Scissors</button>
-                </div><!--
-
-                --><div id="computer-controls">
-                    <span>Computer</span>
-                    <button class="rock" name="rock" type="button">Rock</button>
-                    <button class="paper" name="paper" type="button">Paper</button>
-                    <button class="scissors" name="scissors" type="button">Scissors</button>
-                </div>
-            </section>
-        </main>
-
-        <footer>
-            <a target = "_blank" href = "https://ardasevinc.me/" id="author"><span>Arda Sevinç</span></a>
-        </footer>
-    </body>
-    <script type="text/javascript" src="./src/rock-paper-scissors.js"></script>
+  <title>Rock Paper Scissors</title>
+</head>
+<body>
+  <header>
+    <h1>Rock Paper Scissors</h1>
+  </header>
+  <main></main>
+  <footer>
+    <ul>
+      <li><a href="https://www.ardasevinc.me" rel="noreferrer"></a></li>
+      <li><a href="https://www.github.com/ardasevinc/"></a></li>
+    </ul>
+  </footer>
+</body>
 </html>
