@@ -1,7 +1,7 @@
 # Rock Paper Scissors
 
-This a native html, css, JavaScript project.
-It is actually my second shot at the odin project.
+This a native HTML, CSS and JavaScript project.
+It is actually my second shot at The Odin Project.
 
 ## How to play?
 
