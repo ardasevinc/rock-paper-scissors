@@ -1,7 +1,7 @@
 # Rock Paper Scissors
 
-This is an amateur javascript, html/css project for learning purposes.
-You play rock-paper-scissors.
+This a native html, css, JavaScript project.
+It is actually my second shot at the odin project.
 
 ## How to play?
 
@@ -9,18 +9,18 @@ You play rock-paper-scissors.
 
 Go to my [website](https://ardasevinc.me/rock-paper-scissors/)
 
-#### Note: Game does not end, i.e. it has no round limit.
+### Step 2
+
+???
+
+### Step 3
+
+Congratulations. You have obtained *entertainment*.
 
 ## Status 
 
-Front-end 80% completed.
-Javascript-side: 95% 
-
-## TODO
-
-- Add round control.
-- Add multiplayer.
-- Add easter eggs
+Redoing most of the stuff. I took months long hiatus and I want to
+make sure that I didn't forget stuff.
 
 ## License
 
