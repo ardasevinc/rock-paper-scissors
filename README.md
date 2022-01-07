@@ -7,7 +7,7 @@ You play rock-paper-scissors.
 
 ### Step 1
 
-Go to my [website](https://ardasevinc.me/rock-paper-scissors/)
+Go to my [website](https://demo.ardasevinc.com/rock-paper-scissors/)
 
 #### Note: Game does not end, i.e. it has no round limit.
 
